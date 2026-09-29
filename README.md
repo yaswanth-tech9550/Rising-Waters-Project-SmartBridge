@@ -168,7 +168,7 @@ The application predicts:
 Clone the repository
 
 ```bash
-git clone https://github.com/yaswanth-tech9550/Rising-Waters-Project-SmartBridge/blob/main/README.md
+git clone https://github.com/yaswanth-tech9550/Rising-Waters-Project-SmartBridge
 ```
 
 Navigate into the project
@@ -213,7 +213,7 @@ http://127.0.0.1:5000
 
 ## 👨‍💻 Developed By
 
-**N.Yaswanth**
+**N.Yaswanth Kumar**
 
 B.Tech – Artificial Intelligence & Machine Learning
 
