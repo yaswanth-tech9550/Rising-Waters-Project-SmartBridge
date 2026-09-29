@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Rising Waters</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<!-- Navbar -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
+
+<div class="container">
+
+<a class="navbar-brand fw-bold" href="/">
+
+<i class="bi bi-water"></i>
+
+Rising Waters
+
+</a>
+
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
+
+<span class="navbar-toggler-icon"></span>
+
+</button>
+
+<div class="collapse navbar-collapse" id="navbar">
+
+<ul class="navbar-nav ms-auto">
+
+<li class="nav-item">
+
+<a class="nav-link active" href="/">Home</a>
+
+</li>
+
+<li class="nav-item">
+
+<a class="nav-link" href="/predict">Prediction</a>
+
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</nav>
+
+<!-- Hero -->
+
+<section class="hero">
+
+<div class="overlay"></div>
+
+<div class="container">
+
+<div class="row align-items-center">
+
+<div class="col-lg-7">
+
+<h1 class="display-3 fw-bold text-white">
+
+<i class="bi bi-cloud-rain-heavy-fill"></i>
+
+Rising Waters
+
+</h1>
+
+<p class="lead text-light mt-4">
+
+AI Powered Flood Prediction System
+
+</p>
+
+<p class="text-white">
+
+Predict flood probability using environmental, geographical,
+infrastructure and human-related factors through Machine Learning.
+
+</p>
+
+<a href="/predict" class="btn btn-warning btn-lg mt-4 px-5">
+
+<i class="bi bi-play-fill"></i>
+
+Start Prediction
+
+</a>
+
+</div>
+
+<div class="col-lg-5 text-center">
+
+<i class="bi bi-water hero-icon"></i>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Features -->
+
+<section class="py-5 bg-light">
+
+<div class="container">
+
+<h2 class="text-center mb-5">
+
+Project Features
+
+</h2>
+
+<div class="row">
+
+<div class="col-md-4">
+
+<div class="card feature-card shadow">
+
+<div class="card-body text-center">
+
+<i class="bi bi-cpu display-3 text-primary"></i>
+
+<h4 class="mt-3">
+
+AI Prediction
+
+</h4>
+
+<p>
+
+Uses Machine Learning to estimate flood probability.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card feature-card shadow">
+
+<div class="card-body text-center">
+
+<i class="bi bi-speedometer2 display-3 text-success"></i>
+
+<h4 class="mt-3">
+
+Fast Analysis
+
+</h4>
+
+<p>
+
+Generate predictions instantly using trained models.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card feature-card shadow">
+
+<div class="card-body text-center">
+
+<i class="bi bi-shield-check display-3 text-danger"></i>
+
+<h4 class="mt-3">
+
+Risk Assessment
+
+</h4>
+
+<p>
+
+Provides Low, Moderate and High Flood Risk alerts.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer class="bg-dark text-white text-center p-3">
+
+Developed using
+
+<b>Flask + Machine Learning + Bootstrap</b>
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

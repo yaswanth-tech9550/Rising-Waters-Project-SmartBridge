@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flood Prediction</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body style="background:#eef5ff;">
+
+<div class="container py-5">
+<div class="text-center mb-5">
+
+<h1 class="fw-bold text-primary">
+🌊 Flood Prediction
+</h1>
+
+<p class="text-secondary fs-5">
+Machine Learning Based Flood Risk Assessment
+</p>
+
+</div>
+
+<div class="card shadow-lg">
+
+<div class="card-header bg-primary text-white text-center">
+<h2>🌊 Flood Prediction Form</h2>
+</div>
+
+<div class="card-body">
+
+<form action="/predict" method="POST">
+
+<div class="alert alert-info shadow-sm">
+
+<i class="bi bi-info-circle-fill"></i>
+
+<b>Instructions:</b>
+
+Select the option that best represents the current environmental condition.
+
+</div>
+
+<div class="card shadow mb-4">
+
+<div class="card-header bg-primary text-white">
+
+<h4>
+
+<i class="bi bi-cloud-rain"></i>
+
+Weather & Climate
+
+</h4>
+
+</div>
+
+<div class="card-body">
+
+<div class="row">
+
+<div class="col-md-6 mb-3">
+<label class="form-label fw-bold">
+🌧 Monsoon Intensity
+</label>
+
+<select class="form-select" name="MonsoonIntensity" required>
+    <option value="">Select Monsoon Intensity</option>
+    <option value="2">Very Low</option>
+    <option value="5">Low</option>
+    <option value="8">Moderate</option>
+    <option value="12">High</option>
+    <option value="16">Very High</option>
+</select>
+</div>
+
+
+
+<div class="col-md-6 mb-3">
+<label class="form-label fw-bold">
+🌡 Climate Change
+</label>
+<select class="form-select" name="ClimateChange" required>
+    <option value="">Select Climate Impact</option>
+    <option value="2">Very Low Impact</option>
+    <option value="5">Low Impact</option>
+    <option value="8">Moderate Impact</option>
+    <option value="12">High Impact</option>
+    <option value="17">Extreme Impact</option>
+</select>
+</div>
+
+
+
+<div class="col-md-6 mb-3">
+<label class="form-label fw-bold">
+🏞 Siltation
+</label>
+<select class="form-select" name="Siltation" required>
+    <option value="">Select Siltation Level</option>
+    <option value="2">Negligible Sediment Build-up</option>
+    <option value="5">Low Sediment Deposition</option>
+    <option value="8">Moderate Sediment Accumulation</option>
+    <option value="12">Heavy Sediment Accumulation</option>
+    <option value="16">Severe River Siltation</option>
+</select>
+</div>
+
+
+<div class="col-md-6 mb-3">
+<label class="form-label fw-bold">
+🌊 Coastal Vulnerability
+</label>
+<select class="form-select" name="CoastalVulnerability" required>
+    <option value="">Select Coastal Risk</option>
+    <option value="2">Very Stable Coastline</option>
+    <option value="5">Low Coastal Risk</option>
+    <option value="8">Moderate Coastal Risk</option>
+    <option value="12">High Coastal Risk</option>
+    <option value="16">Extreme Coastal Risk</option>
+</select>
+</div>
+
+<div class="col-md-6 mb-3">
+<label class="form-label fw-bold">
+⛰ Landslides
+</label>
+<select class="form-select" name="Landslides" required>
+    <option value="">Select Landslide Activity</option>
+    <option value="2">No Landslide Activity</option>
+    <option value="5">Low Activity</option>
+    <option value="8">Moderate Activity</option>
+    <option value="12">Frequent Landslides</option>
+    <option value="16">Severe Landslide Zone</option>
+</select>
+</div>
+</div>
+
+</div>
+
+</div>
+
+<div class="card shadow mb-4">
+
+<div class="card-header bg-success text-white">
+
+<h4>
+
+<i class="bi bi-tree-fill"></i>
+
+Environment
+
+</h4>
+
+</div>
+
+<div class="card-body">
+
+<div class="row">
+
+<div class="col-md-6 mb-3">
+<label class="form-label fw-bold">
+🌲 Deforestation
+</label>
+<select class="form-select" name="Deforestation" required>
+    <option value="">Select Deforestation Level</option>
+    <option value="2">Minimal</option>
+    <option value="5">Low</option>
+    <option value="8">Moderate</option>
+    <option value="12">High</option>
+    <option value="17">Severe</option>
+</select>
+</div>
+
+<div class="col-md-6 mb-3">
+<label class="form-label fw-bold">
+🌾 Agricultural Practices
+</label>
+<select class="form-select" name="AgriculturalPractices" required>
+    <option value="">Select Agricultural Practice</option>
+    <option value="2">Sustainable Farming</option>
+    <option value="5">Conservation Farming</option>
+    <option value="8">Conventional Farming</option>
+    <option value="12">Intensive Farming</option>
+    <option value="16">Unsustainable Farming</option>
+</select>
+</div>
+
+
+<div class="col-md-6 mb-3">
+<label class="form-label fw-bold">
+🏘 Encroachments
+</label>
+<select class="form-select" name="Encroachments" required>
+    <option value="">Select Encroachment Status</option>
+    <option value="2">No Encroachment</option>
+    <option value="5">Minor Encroachment</option>
+    <option value="8">Moderate Encroachment</option>
+    <option value="12">Major Encroachment</option>
+    <option value="16">Critical Encroachment</option>
+</select>
+</div>
+
+<div class="col-md-6 mb-3">
+<label class="form-label fw-bold">
+💧 Wetland Loss
+</label>
+<select class="form-select" name="WetlandLoss" required>
+    <option value="">Select Wetland Condition</option>
+    <option value="2">Wetlands Fully Preserved</option>
+    <option value="5">Minor Wetland Loss</option>
+    <option value="8">Moderate Wetland Loss</option>
+    <option value="12">Major Wetland Loss</option>
+    <option value="16">Critical Wetland Loss</option>
+</select>
+</div>
+
+<div class="col-md-6 mb-3">
+<label class="form-label fw-bold">
+🏞 Watersheds
+</label>
+<select class="form-select" name="Watersheds" required>
+    <option value="">Select Watershed Health</option>
+    <option value="2">Excellent Watershed</option>
+    <option value="5">Healthy Watershed</option>
+    <option value="8">Moderate Condition</option>
+    <option value="12">Degraded Watershed</option>
+    <option value="16">Severely Degraded Watershed</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="card shadow mb-4">
+
+<div class="card-header bg-warning text-dark">
+
+<h4>
+
+<i class="bi bi-building-fill"></i>
+
+Infrastructure
+
+</h4>
+
+</div>
+
+<div class="card-body">
+
+<div class="row">
+
+<div class="col-md-6 mb-3">
+<label class="form-label fw-bold">
+🗺 Topography Drainage
+</label>
+
+<select class="form-select" name="TopographyDrainage" required>
+    <option value="">Select Drainage Condition</option>
+    <option value="3">Very Poor</option>
+    <option value="6">Poor</option>
+    <option value="9">Average</option>
+    <option value="13">Good</option>
+    <option value="18">Excellent</option>
+</select>
+</div>
+
+<div class="col-md-6 mb-3">
+<label class="form-label fw-bold">
+🌊 River Management
+</label>
+
+<select class="form-select" name="RiverManagement" required>
+    <option value="">Select River Management</option>
+    <option value="3">Very Poor</option>
+    <option value="6">Poor</option>
+    <option value="9">Average</option>
+    <option value="13">Good</option>
+    <option value="16">Excellent</option>
+</select>
+</div>
+
+<div class="col-md-6 mb-3">
+<label class="form-label fw-bold">
+ 🏗 Dam Quality
+</label>
+<select class="form-select" name="DamsQuality" required>
+    <option value="">Select Dam Condition</option>
+    <option value="2">Very Poor</option>
+    <option value="5">Poor</option>
+    <option value="8">Average</option>
+    <option value="12">Good</option>
+    <option value="16">Excellent</option>
+</select>
+</div>
+
+<div class="col-md-6 mb-3">
+<label class="form-label fw-bold">
+ 🌊 Drainage Systems
+</label>
+<select class="form-select" name="DrainageSystems" required>
+    <option value="">Select Drainage Condition</option>
+    <option value="2">Excellent Drainage</option>
+    <option value="5">Good Drainage</option>
+    <option value="8">Average Drainage</option>
+    <option value="12">Poor Drainage</option>
+    <option value="16">Blocked Drainage</option>
+</select>
+</div>
+
+<div class="col-md-6 mb-3">
+<label class="form-label fw-bold">
+ 🏘 Infrastructure Condition
+</label>
+<select class="form-select" name="DeterioratingInfrastructure" required>
+    <option value="">Select Infrastructure Status</option>
+    <option value="2">Excellent Condition</option>
+    <option value="5">Good Condition</option>
+    <option value="8">Needs Maintenance</option>
+    <option value="12">Poor Condition</option>
+    <option value="16">Critical Condition</option>
+</select>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card shadow mb-4">
+
+<div class="card-header bg-dark text-white">
+
+<h4>
+
+<i class="bi bi-people-fill"></i>
+
+Human Factors
+
+</h4>
+
+</div>
+
+<div class="card-body">
+
+<div class="row">
+
+<div class="col-md-6 mb-3">
+<label class="form-label fw-bold">
+🏙 Urbanization
+</label>
+<select class="form-select" name="Urbanization" required>
+    <option value="">Select Urbanization Level</option>
+    <option value="2">Rural</option>
+    <option value="5">Semi-Urban</option>
+    <option value="8">Urban</option>
+    <option value="12">Highly Urbanized</option>
+    <option value="17">Mega Urban</option>
+</select>
+</div>
+
+<div class="col-md-6 mb-3">
+<label class="form-label fw-bold">
+ 👥 Population Density
+</label>
+<select class="form-select" name="PopulationScore" required>
+    <option value="">Select Population Density</option>
+    <option value="2">Very Sparse</option>
+    <option value="5">Sparse</option>
+    <option value="8">Moderately Dense</option>
+    <option value="12">Highly Dense</option>
+    <option value="16">Extremely Dense</option>
+</select>
+</div>
+
+<div class="col-md-6 mb-3">
+<label class="form-label fw-bold">
+📋 Planning Quality
+</label>
+<select class="form-select" name="InadequatePlanning" required>
+    <option value="">Select Planning Quality</option>
+    <option value="2">Excellent Planning</option>
+    <option value="5">Well Planned</option>
+    <option value="8">Average Planning</option>
+    <option value="12">Poor Planning</option>
+    <option value="16">No Effective Planning</option>
+</select>
+</div>
+
+<div class="col-md-6 mb-3">
+<label class="form-label fw-bold">
+ 🏛 Governance
+</label>
+<select class="form-select" name="PoliticalFactors" required>
+    <option value="">Select Government Support</option>
+    <option value="2">Highly Effective Governance</option>
+    <option value="5">Effective Governance</option>
+    <option value="8">Moderately Effective</option>
+    <option value="12">Limited Government Support</option>
+    <option value="16">Critical Governance Issues</option>
+</select>
+</div>
+
+<div class="col-md-6 mb-3">
+<label class="form-label fw-bold">
+🚨 Disaster Preparedness
+</label>
+<select class="form-select" name="IneffectiveDisasterPreparedness" required>
+    <option value="">Select Preparedness Level</option>
+    <option value="2">Highly Prepared</option>
+    <option value="5">Well Prepared</option>
+    <option value="8">Moderately Prepared</option>
+    <option value="12">Poorly Prepared</option>
+    <option value="16">Not Prepared</option>
+</select>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="text-center">
+
+<button class="btn btn-primary btn-lg">
+🌊 Predict Flood Risk
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
