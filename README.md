@@ -213,11 +213,7 @@ http://127.0.0.1:5000
 
 ## 👨‍💻 Developed By
 
-**T.Reddy Purandareswar**
-
-**G.Vishnu**
-
-**N.Thulasi Raman**
+**N.Yaswanth**
 
 B.Tech – Artificial Intelligence & Machine Learning
 
