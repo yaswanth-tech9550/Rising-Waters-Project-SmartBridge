@@ -168,7 +168,7 @@ The application predicts:
 Clone the repository
 
 ```bash
-git clone https://github.com/Purandareswar/Smart-Bridge-Rising-Waters-Project.git
+git clone https://github.com/yaswanth-tech9550/Rising-Waters-Project-SmartBridge/blob/main/README.md
 ```
 
 Navigate into the project
